@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Computer Repair</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.4;
+        }
+        
+        /* Contact Bar */
+        .contact-bar {
+            background: rgb(0, 0, 204);
+            color: #ffffff;
+            padding: 0.75rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 3px solid #000000;
+            padding: 1.5rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: block;
+        }
+        
+        .logo img {
+            height: 180px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            border: 3px solid #000000;
+            margin-left: -3px;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-links a:first-child {
+            margin-left: 0;
+        }
+        
+        .nav-links a:hover {
+            background: rgb(0, 0, 204);
+            color: #ffffff;
+            z-index: 10;
+            position: relative;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: #ffffff;
+            padding: 4rem 0;
+            border-bottom: 3px solid #000000;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4rem;
+            font-weight: 800;
+            color: #000000;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgb(0, 0, 204);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            color: #000000;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        
+        .cta-button {
+            background: rgb(0, 0, 204);
+            color: #ffffff;
+            padding: 1.2rem 2.5rem;
+            border: 3px solid #000000;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translate(3px, 3px);
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: rgb(0, 0, 204);
+            color: #ffffff;
+            padding: 4rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            max-width: 600px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3px;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            color: #000000;
+            padding: 2.5rem;
+            border: 3px solid #000000;
+            transition: all 0.2s ease;
+        }
+        
+        .service-card:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translate(5px, 5px);
+        }
+        
+        .service-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgb(0, 0, 204);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card:hover .service-number {
+            color: rgb(0, 0, 204);
+        }
+        
+        .service-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        /* Info Grid */
+        .info-section {
+            background: #ffffff;
+            padding: 4rem 0;
+            border-bottom: 3px solid #000000;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3px;
+        }
+        
+        .info-card {
+            background: rgb(0, 0, 204);
+            color: #ffffff;
+            padding: 2rem;
+            border: 3px solid #000000;
+            text-align: center;
+        }
+        
+        .info-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card p {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Terminal Section */
+        .terminal-section {
+            background: #000000;
+            color: #ffffff;
+            padding: 4rem 0;
+        }
+        
+        .terminal {
+            background: #000000;
+            border: 3px solid #ffffff;
+            font-family: 'JetBrains Mono', monospace;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terminal-header {
+            background: #ffffff;
+            color: #000000;
+            padding: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 3px solid #ffffff;
+        }
+        
+        .terminal-content {
+            padding: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .prompt {
+            color: rgb(0, 0, 204);
+        }
+        
+        .command {
+            color: #ffffff;
+        }
+        
+        .output {
+            color: #cccccc;
+            margin-left: 2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #ffffff;
+            border-top: 3px solid #000000;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                flex: 1;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .services-section,
+            .info-section,
+            .terminal-section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-bar">
+        <div class="contact-container">
+            <div class="contact-item">
+                <span>📞</span>
+                <span>(318) 500-3293</span>
+            </div>
+            <div class="contact-item">
+                <span>✉️</span>
+                <span>hcrepair@usa.com</span>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="Home Computer Repair">
+            </a>
+  <!--          <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul> -->
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Home<br>Computer<br>Repair</h1>
+            <div class="subtitle">Software Specialists</div>
+            <div class="description">
+                Professional repair services for computers and technology systems with expert diagnosis and solutions.
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Complete software solutions for computing equipment</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>Software Repair</h3>
+                    <p>Complete diagnostic and repair services for computer systems.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Hardware Repair</h3>
+                    <p>Full restoration services for restoring old computers back to their former glory for affordable prices.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>Data Recovery</h3>
+                    <p>Specialized recovery services for broken hard drives & general lost data.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>General Assistance</h3>
+                    <p>Comprehensive computer support including setup, optimization, troubleshooting, and maintenance services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Local</h3>
+                    <p>Community-Based Service</p>
+                </div>
+                <div class="info-card">
+                    <h3>Kind</h3>
+                    <p>Personal Customer Care</p>
+                </div>
+                <div class="info-card">
+                    <h3>Bargain</h3>
+                    <p>Competitive Fair Pricing</p>
+                </div>
+                <div class="info-card">
+                    <h3>Fast</h3>
+                    <p>Quick Turnaround Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="terminal-section">
+        <div class="container">
+            <div class="terminal">
+                <div class="terminal-header">System Status</div>
+                <div class="terminal-content">
+                    <div><span class="prompt">C:\REPAIR></span> <span class="command">dir services</span></div>
+                    <div class="output">Volume in drive C is ERROR</div>
+                    <div class="output">Directory of C:\REPAIR\SERVICES</div>
+                    <div class="output"></div>
+                    <div class="output">HARDWARE.EXE    2048   01-01-85   12:00a</div>
+                    <div class="output">RESTORE.EXE     4096   01-01-85   12:00a</div>
+                    <div class="output">RECOVERY.EXE    1024   01-01-85   12:00a</div>
+                    <div class="output">MODS.EXE        3072   01-01-85   12:00a</div>
+                    <div class="output">        4 File(s)   10240 bytes</div>
+                    <div class="output">        0 Dir(s)  ∞ bytes free</div>
+                    <div><span class="prompt">C:\REPAIR></span> <span class="command">_</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>2025 Home Computer Repair - Professional Computer Services</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Terminal cursor animation
+        const cursor = document.querySelector('.terminal-content div:last-child .command');
+        if (cursor) {
+            setInterval(() => {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
